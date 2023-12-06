@@ -41,10 +41,7 @@ public class UserDAOHandler {
 			
 			if (rs != null) {
 				while (rs.next()) {
-					item = new User();
-					item.setId(rs.getInt("id"));
-					item.setUsername(rs.getString("username"));
-					item.setPassword(rs.getString("password"));
+					item = new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"));
 				}
 				rs.close();
 			}
@@ -75,13 +72,8 @@ public class UserDAOHandler {
 			ResultSet rs = pst.executeQuery();
 			
 			if (rs != null) {
-				User item;
 				while (rs.next()) {
-					item = new User();
-					item.setId(rs.getInt("id"));
-					item.setUsername(rs.getString("username"));
-					item.setPassword(rs.getString("password"));
-					items.add(item);
+					items.add(new User(rs.getInt("id"), rs.getString("username"), rs.getString("password")));
 				}
 				rs.close();
 			}

@@ -1,4 +1,4 @@
-package main;
+package test;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		UserDAOHandler udh = new UserDAOHandler();
 		
-		User u1 = new User();
+//		User u1 = new User();
 //		u1.setId(3);
 //		u1.setUsername("hoanggiang");
 //		u1.setPassword("12345678");
@@ -30,16 +30,18 @@ public class Main {
 //		}
 		
 		
-		if (udh.deleteUser(3) ) {
-			System.out.println("Delete success!");
-		} else {
-			System.out.println("Delete fail!");			
-		}
+//		if (udh.deleteUser(3) ) {
+//			System.out.println("Delete success!");
+//		} else {
+//			System.out.println("Delete fail!");			
+//		}
 		
 		
-		ArrayList<User> items = udh.getUsers(null, (byte)20);
-		items.forEach(item -> {
-			System.out.println(item);
-		});
+//		ArrayList<User> items = udh.getUsers(null, (byte)20);
+//		items.forEach(item -> {
+//			System.out.println(item);
+//		});
+		
+		System.out.println(udh.getUserById(7));
 	}
 }
